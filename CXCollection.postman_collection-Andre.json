@@ -1,0 +1,128 @@
+{
+	"variables": [],
+	"info": {
+		"name": "CXCollection",
+		"_postman_id": "a4b3d7f2-140f-c1b9-d183-53fe458831be",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"url": "http://{{IP_ADDRESS}}/cxrestapi/auth/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": {{username}},\r\n  \"password\": {{password}}\r\n}"
+				},
+				"description": "AuthenticationRequest"
+			},
+			"response": []
+		},
+		{
+			"name": "GetOsaScans",
+			"request": {
+				"url": {
+					"raw": "http://{{IP_ADDRESS}}/cxrestapi/osa/scans?projectId=10004",
+					"protocol": "http",
+					"host": [
+						"{{IP_ADDRESS}}"
+					],
+					"path": [
+						"cxrestapi",
+						"osa",
+						"scans"
+					],
+					"query": [
+						{
+							"key": "projectId",
+							"value": "10004",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "CXCSRFToken",
+						"value": "{{CXCSRFToken}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Get scan result"
+			},
+			"response": []
+		},
+		{
+			"name": "GetOsaScan",
+			"request": {
+				"url": "http://{{IP_ADDRESS}}/cxrestapi/osa/scans/cefdb187-c254-41b1-b462-e4ff002da74c",
+				"method": "GET",
+				"header": [
+					{
+						"key": "CXCSRFToken",
+						"value": "tS!47xD_J@e05N!nk_8P6cM@!H9pA3g@_zR12@sGy6B_Q!8wa1E@7L!fm_9C@Zr4F5_j!Wd30o@K!2TbYi9_q0!X5Lz_Gq@3w_4PYs@6m8Z!7@dC!Q2tX1g_o@5A!Jj0",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Get scan result"
+			},
+			"response": []
+		},
+		{
+			"name": "GetOsaScanReport",
+			"request": {
+				"url": {
+					"raw": "http://{{IP_ADDRESS}}/cxrestapi/osa/reports?scanId=cefdb187-c254-41b1-b462-e4ff002da74c&reportFormat=JSON",
+					"protocol": "http",
+					"host": [
+						"{{IP_ADDRESS}}"
+					],
+					"path": [
+						"cxrestapi",
+						"osa",
+						"reports"
+					],
+					"query": [
+						{
+							"key": "scanId",
+							"value": "cefdb187-c254-41b1-b462-e4ff002da74c",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "reportFormat",
+							"value": "JSON",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "CXCSRFToken",
+						"value": "tS!47xD_J@e05N!nk_8P6cM@!H9pA3g@_zR12@sGy6B_Q!8wa1E@7L!fm_9C@Zr4F5_j!Wd30o@K!2TbYi9_q0!X5Lz_Gq@3w_4PYs@6m8Z!7@dC!Q2tX1g_o@5A!Jj0",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Get scan result"
+			},
+			"response": []
+		}
+	]
+}
